@@ -15,7 +15,7 @@ RUN npm install -g phantomjs
 RUN gem install bundler -v 1.15.0
 
 # Application
-ENV app_name docker-titech
+ENV app_name t2pay
 ENV app_home_path /$app_name
 
 RUN mkdir $app_home_path
