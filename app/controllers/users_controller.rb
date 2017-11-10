@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
+  #GET /users/1/print?
+  def print
+  end
 
   # POST /users
   # POST /users.json
