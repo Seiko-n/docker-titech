@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get 'application' => 'application#index'
   get 'home' => 'home#index'
   get 'haruki' => 'haruki#index'
-  get 'createrpage' => 'createrpage#index'
+  get 'seiko' => 'seiko#index'
   root 'application#index'
 end
