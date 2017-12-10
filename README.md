@@ -1,3 +1,4 @@
+#modify by haruki
 # README
 #test
 #test2
@@ -22,8 +23,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-<<<<<<< HEAD
-* ...
 =======
 https://atom.io/
 
