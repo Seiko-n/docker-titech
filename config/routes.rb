@@ -6,7 +6,5 @@ Rails.application.routes.draw do
   get 'haruki' => 'haruki#index'
   get 'createrpage' => 'createrpage#index'
   get 'seiko' => 'seiko#index'
-  get 'java' => 'java#index'
-  get 'java2' => 'java#index2'
   root 'application#index'
 end
