@@ -1,2 +1,2 @@
-class HarukiController < ActionController::Base
+class HarukiController < ApplicationController
 end

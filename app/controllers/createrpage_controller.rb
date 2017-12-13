@@ -1,2 +1,2 @@
-class CreaterpageController < ActionController::Base
+class CreaterpageController < ApplicationController
 end

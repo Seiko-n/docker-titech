@@ -1,2 +1,2 @@
-class YajimaController < ActionController::Base
+class YajimaController < ApplicationController
 end

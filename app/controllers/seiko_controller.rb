@@ -1,2 +1,2 @@
-class SeikoController < ActionController::Base
+class SeikoController < ApplicationController
 end
