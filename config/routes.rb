@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'java' => 'java#index'
   get 'java2' => 'java#index2'
   root 'haruki#index'
+
 end
