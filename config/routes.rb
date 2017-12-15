@@ -5,14 +5,8 @@ Rails.application.routes.draw do
 <<<<<<< HEAD
   get 'application' => 'application#index'
   get 'home' => 'home#index'
-  get 'haruki' => 'haruki#index'
-  get 'createrpage' => 'createrpage#index'
-  get 'seiko' => 'seiko#index'
-  get'yajima'=> 'yajima#index'
   get'creators'=> 'creators#index'
   get'movies'=> 'movies#index'
-  root 'application#index'
-=======
   get 'new' => 'devise/registration/new#index'
   get 'contents' => 'contents#index'
   get 'creatorpage' => 'creatorpage#index'
