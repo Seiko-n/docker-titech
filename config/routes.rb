@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'application' => 'application#index'
-  get 'home' => 'home#index'
-  get 'haruki' => 'haruki#index'
-  get 'createrpage' => 'createrpage#index'
-  get 'seiko' => 'seiko#index'
-  root 'application#index'
+  get 'contents' => 'contents#index'
+  get 'creatorpage' => 'creatorpage#index'
+  get 'userpage' => 'userpage#index'
+  root 'home#index'
 end

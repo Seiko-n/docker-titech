@@ -224,11 +224,11 @@ NAVIGATION
 }
 
 #main-navigation.navbar .navbar-collapse {
-    text-align: center;
+    text-align: left;
 }
 
 #main-navigation.navbar-fixed-top .navbar-collapse {
-	max-height: 380px;
+	max-height: 200px;
 }
 
 #main-navigation.navbar-default {

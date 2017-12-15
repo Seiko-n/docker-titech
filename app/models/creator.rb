@@ -11,5 +11,5 @@
 #  updated_at :datetime         not null
 #
 
-class User < ApplicationRecord
+class Creator < User
 end
