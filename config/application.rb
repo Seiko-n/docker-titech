@@ -12,12 +12,18 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module T2pay
   class Application < Rails::Application
+    #2017/12/10 lib/hoge.rbの自作クラスを読み込んで動作させるために追加した。
+    config.autoload_paths << "#{Rails.root}/lib"
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
