@@ -1,0 +1,2 @@
+class CreatorpageController < ApplicationController
+end

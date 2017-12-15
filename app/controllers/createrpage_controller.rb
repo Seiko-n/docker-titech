@@ -1,2 +1,0 @@
-class CreaterpageController < ApplicationController
-end

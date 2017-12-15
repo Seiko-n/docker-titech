@@ -1,2 +1,0 @@
-class SeikoController < ApplicationController
-end

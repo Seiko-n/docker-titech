@@ -1,2 +1,0 @@
-class HarukiController < ApplicationController
-end
