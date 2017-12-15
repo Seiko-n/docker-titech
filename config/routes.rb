@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get 'createrpage' => 'createrpage#index'
   get 'seiko' => 'seiko#index'
   get'yajima'=> 'yajima#index'
+  get'creators'=> 'creators#index'
+  get'movies'=> 'movies#index'
   root 'application#index'
 end
