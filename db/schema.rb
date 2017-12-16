@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20171215063752) do
     t.string "title"
     t.string "url"
     t.integer "creator_id"
+    t.string "embeded_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171215063752) do
     t.bigint "user_id"
     t.integer "creator_id"
     t.integer "aglt"
+    t.integer "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tokens_on_user_id"
@@ -70,6 +72,13 @@ ActiveRecord::Schema.define(version: 20171215063752) do
     t.integer "failed_attempts", default: 0
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "genre1"
+    t.string "genre2"
+    t.string "genre3"
+    t.integer "syojikin", default: 1000
+    t.integer "kakutoku"
+    t.integer "prem_price"
+    t.string "ytube_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

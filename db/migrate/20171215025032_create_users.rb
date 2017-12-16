@@ -33,8 +33,16 @@ class CreateUsers < ActiveRecord::Migration[5.1]
        t.string   :unlock_token # Only if unlock strategy is :email or :both
        t.datetime :locked_at
 
+       t.string   :genre1
+       t.string   :genre2
+       t.string   :genre3
+       t.integer  :syojikin, default: 1000
+       t.integer  :kakutoku
+       t.integer  :prem_price
+       t.string   :ytube_name
 
-      t.timestamps null: false
+      t.timestamps
+
     end
 
     add_index :users, :email,                unique: true
