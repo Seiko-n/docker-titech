@@ -10,12 +10,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<footer>
-  <div class="container">
-    Rails Girls 2017
-  </div>
-</footer>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script> src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <body>
     <header>
             <nav>
@@ -48,7 +43,8 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/ideas">Test page</a></li>
+          <li class=""><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+          <li class=""><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>

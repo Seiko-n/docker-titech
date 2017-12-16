@@ -1,0 +1,14 @@
+<%= form_for @token do |t| %>
+  <p>
+    <%= t.label :creator_id %>
+    <%= t.text_field :creator_id %>
+  </p>
+
+  <p>
+    <%= t.label :aglt %>
+    <%= f.text_field :aglt %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>
