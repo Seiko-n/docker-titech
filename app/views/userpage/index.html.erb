@@ -2,9 +2,6 @@
 <HTML lang="ja">
 <HEAD>
 
-<!--
-<LINK rel="stylesheet" type="text/css" href="<%= asset_path "seiko.css", type: :stylesheet %>" >
--->
 
 <LINK rel="stylesheet" type="text/css" href="/stylesheets/seiko.css" >
 <TITLE>CSSのテスト</TITLE>
@@ -15,5 +12,21 @@
 最初の行は2文字分だけ字下げされているはずです。
 asset_path関数がうまく使えなかったので、public下にcssを置く手法に切り替えました。
 /stylesheets/xxx.css を参照したいので、 public/stylesheets/seiko.css を配置しました。</P>
+
+<p>
+現在登録されているユーザーは次のとおりです。
+</p>
+
+
+<p>
+[ユーザーネーム] <%= @tests.find(1).name %><br />
+[タイプ] <%= @tests.find(1).user_type %><br />
+[メールアドレス] <%= @tests.find(1).email %><br />
+[おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
+[ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
+[トークン価値] <%= @sum %> AGLT * <%= @tokens.find(1).created_at %><br />
+</p>
+
+
 </BODY>
 </HTML>
