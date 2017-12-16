@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
+#  creator_id :integer
 #  prefecture :string
 #  sex        :string
 #  age        :integer
