@@ -2,27 +2,90 @@
 <meta http-equiv="refresh" content="10" >
 <HTML lang="ja">
 <HEAD>
-<TITLE>CSSのテスト</TITLE>
 <%= javascript_include_tag "//www.google.com/jsapi" %>
 </HEAD>
 
 <BODY>
-<H1><%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value</H1>
-<P></P>
-
+<link href="userpage.css" rel="stylesheets"></link>
+<form id="form01" action="cgi-bin/example.cgi" method="post">
+  <center>
+    <input type="search" name="search" size="60" placeholder="クリエイターを検索">
+    <input type="submit" name="submit" value="検索" size="30" >
+  </center>
+</form>
+<div class="row">
+  <div class="col-sm-2">
+    <p>
+      [ユーザーネーム] <%= @tests.find(1).name %><br />
+      [タイプ] <%= @tests.find(1).user_type %><br />
+      [メールアドレス] <%= @tests.find(1).email %><br />
+      [おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
+      [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
+    </p>
+  	<H1>  <%= @sum*@passtime %> Value</H1></div>
+  <div class="col-sm-7">
+  	あなたへのおすすめ
+  	<% iframe = content_tag(
+      :iframe,
+      '', # empty body
+      width: 550,
+      height: 500,
+      src: "https://www.youtube.com/embed/rfEJnGp4984",
+      # src: "https://www.youtube.com/embed/#{@movie_id}",
+      frameborder: 0,
+      allowfullscreen: true
+      ) %>
+      <%= content_tag(:div, iframe, class: 'youtube-container') %>
+    <div class="row">
+      <div class="col-sm-4">
+        <% iframe = content_tag(
+          :iframe,
+          '', # empty body
+          width: 150,
+          height: 150,
+          src: "https://www.youtube.com/embed/rfEJnGp4984",
+          # src: "https://www.youtube.com/embed/#{@movie_id}",
+          frameborder: 0,
+          allowfullscreen: true
+          ) %>
+          <%= content_tag(:div, iframe, class: 'youtube-container') %>
+      </div>
+      <div class="col-sm-4">
+      	        <% iframe = content_tag(
+          :iframe,
+          '', # empty body
+          width: 150,
+          height: 150,
+          src: "https://www.youtube.com/embed/rfEJnGp4984",
+          # src: "https://www.youtube.com/embed/#{@movie_id}",
+          frameborder: 0,
+          allowfullscreen: true
+          ) %>
+          <%= content_tag(:div, iframe, class: 'youtube-container') %>
+      </div>
+      <div class="col-sm-4">
+      	        <% iframe = content_tag(
+          :iframe,
+          '', # empty body
+          width: 150,
+          height: 150,
+          src: "https://www.youtube.com/embed/rfEJnGp4984",
+          # src: "https://www.youtube.com/embed/#{@movie_id}",
+          frameborder: 0,
+          allowfullscreen: true
+          ) %>
+          <%= content_tag(:div, iframe, class: 'youtube-container') %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">袮津----------------</div>
+</div>
 <H4>
 保有トークン割合
 </H4>
 
 <%= pie_chart @pie_chart %>
-<p>
-[ユーザーネーム] <%= @tests.find(1).name %><br />
-[タイプ] <%= @tests.find(1).user_type %><br />
-[メールアドレス] <%= @tests.find(1).email %><br />
-[おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
-[ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
-[トークン価値] <%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value<br />
-</p>
+
 
 <% iframe = content_tag(
     :iframe,
