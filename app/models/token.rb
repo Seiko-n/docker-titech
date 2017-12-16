@@ -6,6 +6,7 @@
 #  user_id    :integer
 #  creator_id :integer
 #  aglt       :integer
+#  movie_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

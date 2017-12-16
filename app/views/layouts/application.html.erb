@@ -40,6 +40,10 @@
                 <strong><%= link_to current_user.name, userpage_path %></strong>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                <%= link_to '銭を投げる', tokens_path%>
+                <%= link_to '動画を追加する', movies_path%>
+
+
               </li>
             </ul>
           <% else %>
