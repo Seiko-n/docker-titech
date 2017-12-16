@@ -11,7 +11,7 @@ class UserpageController < ApplicationController
     end
     @passtime = (Time.now - @tokens.find(1).created_at).to_i
 
-    # @pie_chart = {@tokens.find(2).creator_id => Token.find(2).aglt, @tokens.find(3).creator_id => Token.find(3).aglt, @tokens.find(4).creator_id => Token.find(4).aglt, @tokens.find(5).creator_id => Token.find(5).aglt}
+    @pie_chart = {@tests.find(2).name => Token.find(2).aglt, @tests.find(3).name => Token.find(3).aglt, @tests.find(4).name => Token.find(4).aglt, @tests.find(5).name => Token.find(5).aglt}
     # @pie_chart = {'2014-04-01' => 20, '2014-04-02' => 50, '2014-04-03' => 30}
 
   end
