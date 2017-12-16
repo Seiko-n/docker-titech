@@ -1,30 +1,29 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<meta http-equiv="refresh" content="10" >
 <HTML lang="ja">
 <HEAD>
-
-
 <TITLE>CSSのテスト</TITLE>
+<%= javascript_include_tag "//www.google.com/jsapi" %>
 </HEAD>
+
 <BODY>
-<H1>スタイルシートが使えるようになりました！！！！！</H1>
-<P>これが最初の段落です。上の見出しは赤い字で表示され、段落の
-最初の行は2文字分だけ字下げされているはずです。
-asset_path関数がうまく使えなかったので、public下にcssを置く手法に切り替えました。
-/stylesheets/xxx.css を参照したいので、 public/stylesheets/seiko.css を配置しました。</P>
+<H1><%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value</H1>
+<P></P>
 
-<p>
-現在登録されているユーザーは次のとおりです。
-</p>
+<H4>
+保有トークン割合
+</H4>
 
-
+<%= pie_chart @pie_chart %>
 <p>
 [ユーザーネーム] <%= @tests.find(1).name %><br />
 [タイプ] <%= @tests.find(1).user_type %><br />
 [メールアドレス] <%= @tests.find(1).email %><br />
 [おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
 [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
-[トークン価値] <%= @sum %> AGLT * <%= @tokens.find(1).created_at %><br />
+[トークン価値] <%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value<br />
 </p>
+
 
 
 </BODY>
