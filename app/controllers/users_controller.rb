@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  def upgrade
+    @user = current_user
+    @user.update(user_type: 'creator')
+    redirect_to root_path, notice: 'You have become creator!!'
+  end
   # GET /users
   # GET /users.json
   def index
