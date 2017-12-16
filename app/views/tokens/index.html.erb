@@ -1,0 +1,13 @@
+<h1>投げられた銭達</h1>
+
+<div class="commands">
+<%= link_to '投げ銭をする',new_token_path %>
+</div>
+
+
+<% @tokens.each do |token|%>
+トークンID  <p><%= token.id %></p>
+誰から  <p><%= token.user_id %></p>
+誰へ  <p><%= token.creator_id %></p>
+いくら  <p><%= token.aglt %></p>
+<% end %>
