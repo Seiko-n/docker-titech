@@ -24,6 +24,17 @@
 [トークン価値] <%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value<br />
 </p>
 
+<% iframe = content_tag(
+    :iframe,
+    '', # empty body
+    width: 460,
+    height: 215,
+    src: "https://www.youtube.com/embed/rfEJnGp4984",
+    # src: "https://www.youtube.com/embed/#{@movie_id}",
+    frameborder: 0,
+    allowfullscreen: true
+) %>
+<%= content_tag(:div, iframe, class: 'youtube-container') %>
 
 
 </BODY>
