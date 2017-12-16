@@ -10,33 +10,10 @@
   </head>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <header>
-    <% if user_signed_in? %>
-      <ul>
-        <li>
-          <strong><%= link_to current_user.name, userpage_path %></strong>
-          <%= link_to 'プロフィール変更', edit_user_registration_path %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-    <% else %>
-      <%= link_to '新規登録', new_user_registration_path %>
-      <%= link_to 'ログイン', new_user_session_path %>
-    <% end %>
+
   </header>
   <body>
-    <header>
-            <nav>
-                <% if user_signed_in? %>
-                <strong><%= link_to current_user.username, pages_show_path %></strong>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
-            <% else %>
-                <%= link_to '新規登録', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-                <% end %>
-            </nav>
-    </header>
     <div class="container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -56,9 +33,27 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class=""><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-          <li class=""><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          <li class=""> <%= link_to 'ユーザーページ', "http://localhost:3000/userpage" %></li>
+
+
+          <% if user_signed_in? %>
+            <ul>
+              <li>
+                <strong><%= link_to current_user.name, userpage_path %></strong>
+                <%= link_to 'プロフィール変更', edit_user_registration_path %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          <% else %>
+          <ul>
+            <li>
+            <%= link_to '新規登録', new_user_registration_path %>
+            <%= link_to 'ログイン', new_user_session_path %>
+          </li>
+        </ul>
+          <% end %>
+
+
+
         </ul>
       </div>
     </div>
