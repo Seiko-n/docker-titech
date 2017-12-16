@@ -1,5 +1,6 @@
 require 'time'
 class UserpageController < ApplicationController
+  before_action :sign_in_required, only: [:userpage]
   def index
     @tests = User.all
     @movies = Movie.all
