@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   get 'contents' => 'contents#index'
   get 'creatorpage' => 'creatorpage#index'
   get 'userpage' => 'userpage#index'
-  get 'movie' => 'movie#index'
-  get 'movie/new' => 'movie#new'
   root 'home#index'
-  post 'movie/new' => 'movie#index'
-
+  resources :movies
+  resources :tokens
 end

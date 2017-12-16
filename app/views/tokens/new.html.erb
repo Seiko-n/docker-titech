@@ -1,0 +1,20 @@
+<h1>投げ銭する</h1>
+
+<%= form_for @token, url:tokens_path do |t| %>
+
+    <%= t.label :user_id,"自分のユーザID" %>
+    <%= t.text_field :user_id %>
+    </br>
+
+    <%= t.label :creator_id,"クリエイターID（投げ銭する人）" %>
+    <%= t.text_field :creator_id %>
+    </br>
+
+    <%= t.label :aglt,"いくら投げるか（1円 = 1 AGLT）" %>
+    <%= t.text_field :aglt %>
+    </br>
+    <%= t.submit "ZENIを投げる！"%>
+
+
+
+<% end %>
