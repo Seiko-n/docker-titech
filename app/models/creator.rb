@@ -22,6 +22,13 @@
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string
 #  locked_at              :datetime
+#  genre1                 :string
+#  genre2                 :string
+#  genre3                 :string
+#  syojikin               :integer          default(1000)
+#  kakutoku               :integer
+#  prem_price             :integer
+#  ytube_name             :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
