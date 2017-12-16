@@ -1,6 +1,9 @@
 class MoviesController < ApplicationController
 
-<<<<<<< HEAD
+  def index
+    @movies = Movie.all
+  end
+
   def new
     @movie = Movie.new
   end
@@ -17,6 +20,4 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:title,:url,:creator_id)
   end
 
-=======
->>>>>>> 5c406434c58823f13539457501ef8f3abdc76d77
 end

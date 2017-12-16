@@ -1,7 +1,13 @@
 <h1>登録した動画一覧</h1>
 
 <div class="commands">
-<%= link_to '新規動画の追加',new_movie_path %>
+<%= link_to 'ビデオを登録する',new_movie_path %>
 </div>
 
-<table class="list">
+過去の投げ銭一覧
+
+<% @movies.each do |movie|%>
+タイトル  <p><%= movie.title %></p>
+URL  <p><%= movie.url %></p>
+クリエイターID  <p><%= movie.creator_id %></p>
+<% end %>

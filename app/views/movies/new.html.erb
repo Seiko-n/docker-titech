@@ -1,14 +1,20 @@
-新規動画の追加
+<h1>新規動画の登録</h1>
 
 <%= form_for @movie, url:movies_path do |t| %>
 
     <%= t.label :title,"動画タイトル" %>
     <%= t.text_field :title %>
+    </br>
+
+    <%= t.label :url,"リンク" %>
+    <%= t.text_field :url %>
+    </br>
+
+    <%= t.label :creator_id,"クリエイターid" %>
+    <%= t.text_field :creator_id %>
+    </br>
     <%= t.submit "登録する！"%>
-</br>
-    <%= t.label :title,"動画タイトル" %>
-    <%= t.text_field :title %>
-    <%= t.submit "登録する！"%>
+
 
 
 <% end %>
