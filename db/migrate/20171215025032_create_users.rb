@@ -39,7 +39,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
        t.integer  :syojikin, default: 1000
        t.integer  :kakutoku
        t.integer  :prem_price
-       t.string   :ytube_name
+       t.string   :ytube_page
+       t.text   :introduction
+
 
       t.timestamps
 

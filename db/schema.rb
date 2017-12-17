@@ -78,7 +78,8 @@ ActiveRecord::Schema.define(version: 20171215063752) do
     t.integer "syojikin", default: 1000
     t.integer "kakutoku"
     t.integer "prem_price"
-    t.string "ytube_name"
+    t.string "ytube_page"
+    t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

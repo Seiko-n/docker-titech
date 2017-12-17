@@ -28,7 +28,8 @@
 #  syojikin               :integer          default(1000)
 #  kakutoku               :integer
 #  prem_price             :integer
-#  ytube_name             :string
+#  ytube_page             :string
+#  introduction           :text
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
