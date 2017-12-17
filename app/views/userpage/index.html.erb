@@ -15,14 +15,13 @@
 </form>
 <div class="row">
   <div class="col-sm-2">
-    <H3>
-      <%= @tests.find(1).name %>さん<br />
-      <br />
-      所持金:<br /><%= @tests.find(1).syojikin %>円<br /><br />
-      支援先:<br /><%= @tests.find(@tokens.find(1).creator_id).name %><br /><br />
-  	  あなたのValue<br /><strong><%= @sum*@passtime %></strong>
-    </H3>
-  </div>
+
+    <H4>
+      ユーザー: <%= @tests.find(1).name %><br />
+      所持金: <%= @tests.find(1).syojikin %>円<br />
+      支援先：<%= @tests.find(@tokens.find(1).creator_id).name %><br />
+  	<H4>  <%= @sum*@passtime %> Value</H4></div>
+
   <div class="col-sm-7">
     <h3>
     あなたへのおすすめ
