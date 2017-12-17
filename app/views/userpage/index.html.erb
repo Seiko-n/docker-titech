@@ -16,89 +16,65 @@
 <div class="row">
   <div class="col-sm-2">
     <p>
+      movie_id: <%= num = rand(1..17) %>
       [ユーザーネーム] <%= @tests.find(1).name %><br />
       [タイプ] <%= @tests.find(1).user_type %><br />
       [メールアドレス] <%= @tests.find(1).email %><br />
-      [おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
+      [おすすめ動画] <A Href="<%= @movies.find(num).url %>"><%= @movies.find(num).title %></A><br />
       [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
     </p>
   	<H1>  <%= @sum*@passtime %> Value</H1></div>
   <div class="col-sm-7">
   	あなたへのおすすめ
-  	<% iframe = content_tag(
+    <center>
+    <% iframe = content_tag(
       :iframe,
       '', # empty body
       width: 550,
-      height: 500,
-      src: "https://www.youtube.com/embed/rfEJnGp4984",
+      height: 350,
+      src: "https://www.youtube.com/embed/#{@movies.find(num).embeded_id}",
       # src: "https://www.youtube.com/embed/#{@movie_id}",
       frameborder: 0,
       allowfullscreen: true
       ) %>
       <%= content_tag(:div, iframe, class: 'youtube-container') %>
+      </center>
     <div class="row">
-      <div class="col-sm-4">
-        <% iframe = content_tag(
+      <div class="col-sm-6">
+      	<center>
+          <% num = rand(1..17) %>
+          <% iframe = content_tag(
           :iframe,
           '', # empty body
-          width: 150,
-          height: 150,
-          src: "https://www.youtube.com/embed/rfEJnGp4984",
+          width: 300,
+          height: 200,
+          src: "https://www.youtube.com/embed/#{@movies.find(num).embeded_id}",
           # src: "https://www.youtube.com/embed/#{@movie_id}",
           frameborder: 0,
           allowfullscreen: true
           ) %>
           <%= content_tag(:div, iframe, class: 'youtube-container') %>
+          <%= @movies.find(num).title %> </br>
+          <%= @tests.find(@movies.find(num).creator_id).name %>
       </div>
-      <div class="col-sm-4">
-      	        <% iframe = content_tag(
+      <div class="col-sm-6">
+      	  <% num = rand(1..17) %>
+      	  <% iframe = content_tag(
           :iframe,
           '', # empty body
-          width: 150,
-          height: 150,
-          src: "https://www.youtube.com/embed/rfEJnGp4984",
+          width: 300,
+          height: 200,
+          src: "https://www.youtube.com/embed/#{@movies.find(num).embeded_id}",
           # src: "https://www.youtube.com/embed/#{@movie_id}",
           frameborder: 0,
           allowfullscreen: true
           ) %>
           <%= content_tag(:div, iframe, class: 'youtube-container') %>
-      </div>
-      <div class="col-sm-4">
-      	        <% iframe = content_tag(
-          :iframe,
-          '', # empty body
-          width: 150,
-          height: 150,
-          src: "https://www.youtube.com/embed/rfEJnGp4984",
-          # src: "https://www.youtube.com/embed/#{@movie_id}",
-          frameborder: 0,
-          allowfullscreen: true
-          ) %>
-          <%= content_tag(:div, iframe, class: 'youtube-container') %>
+          </center>
       </div>
     </div>
   </div>
   <div class="col-sm-3">袮津----------------</div>
 </div>
-<H4>
-保有トークン割合
-</H4>
-
-<%= pie_chart @pie_chart %>
-
-
-<% iframe = content_tag(
-    :iframe,
-    '', # empty body
-    width: 460,
-    height: 215,
-    src: "https://www.youtube.com/embed/rfEJnGp4984",
-    # src: "https://www.youtube.com/embed/#{@movie_id}",
-    frameborder: 0,
-    allowfullscreen: true
-) %>
-<%= content_tag(:div, iframe, class: 'youtube-container') %>
-
-
 </BODY>
 </HTML>
