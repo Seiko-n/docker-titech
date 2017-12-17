@@ -24,15 +24,15 @@
 
 
 
-User.create!(:name => "matuken", :email => "matuura@knetaro.com", :password => "kentaro",  :genre1 => "パルクール",  :genre2 => "アウトドア", :genre3 => "英語", :kakutoku => 0, :prem_price => 0 )
+User.create!(:name => "matuken", :email => "matuura@knetaro.com", :password => "kentaro",  :genre1 => "パルクール",  :genre2 => "アウトドア", :genre3 => "英語", :kakutoku => 0, :prem_price => 0, :confirmed_at => "Sun, 17 Dec 2017 01:04:18 UTC +00:00" )
 
-User.create!(:name => "turiyoka", :user_type => "Creator", :email => "turiyoka@knetaro.com", :password => "kentaro",  :genre1 => "釣り",  :genre2 => "料理", :genre3 => "アウトドア", :kakutoku => 0, :prem_price => 1000 )
+User.create!(:name => "turiyoka", :user_type => "Creator", :email => "turiyoka@knetaro.com", :password => "kentaro",  :genre1 => "釣り",  :genre2 => "料理", :genre3 => "アウトドア", :kakutoku => 0, :prem_price => 1000,:confirmed_at => "Sun, 17 Dec 2017 01:04:18 UTC +00:00" )
 
-User.create!(:name => "kazumeshi", :user_type => "Creator", :email => "kazumeshi@knetaro.com", :password => "kentaro",  :genre1 => "料理",  :genre2 => "アウトドア", :genre3 => "男飯", :kakutoku => 0, :prem_price => 500 )
+User.create!(:name => "kazumeshi", :user_type => "Creator", :email => "kazumeshi@knetaro.com", :password => "kentaro",  :genre1 => "料理",  :genre2 => "アウトドア", :genre3 => "男飯", :kakutoku => 0, :prem_price => 500,:confirmed_at => "Sun, 17 Dec 2017 01:04:18 UTC +00:00" )
 
-User.create!(:name => "bilingirl", :user_type => "Creator", :email => "bairingaru@knetaro.com", :password => "kentaro",  :genre1 => "英語",  :genre2 => "海外", :genre3 => "留学", :kakutoku => 0, :prem_price => 10000 )
+User.create!(:name => "bilingirl", :user_type => "Creator", :email => "bairingaru@knetaro.com", :password => "kentaro",  :genre1 => "英語",  :genre2 => "海外", :genre3 => "留学", :kakutoku => 0, :prem_price => 10000,:confirmed_at => "Sun, 17 Dec 2017 01:04:18 UTC +00:00" )
 
-User.create!(:name => "renren", :user_type => "Creator", :email => "renren@knetaro.com", :password => "kentaro",  :genre1 => "パルクール",  :genre2 => "アウトドア", :genre3 => "中学生", :kakutoku => 0, :prem_price => 100 )
+User.create!(:name => "renren", :user_type => "Creator", :email => "renren@knetaro.com", :password => "kentaro",  :genre1 => "パルクール",  :genre2 => "アウトドア", :genre3 => "中学生", :kakutoku => 0, :prem_price => 100, :confirmed_at => "Sun, 17 Dec 2017 01:04:18 UTC +00:00" )
 
 
 #1-
