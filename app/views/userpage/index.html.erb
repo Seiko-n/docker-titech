@@ -63,7 +63,7 @@
     <div class="row">
       <div class="col-sm-6">
       	<center>
-          <% num = rand(1..16) %>
+          <% num = rand(1..20) %>
           <% iframe = content_tag(
           :iframe,
           '', # empty body
@@ -81,9 +81,20 @@
             <%= @tests.find(@movies.find(num).creator_id).name %>
           </strong>
           </h4>
+          <p>
+        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
+        100円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
+        50円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
+        10円
+        </button>
+      </p>
       </div>
       <div class="col-sm-6">
-      	  <% num = rand(1..16) %>
+      	  <% num = rand(1..20) %>
       	  <% iframe = content_tag(
           :iframe,
           '', # empty body
@@ -103,17 +114,48 @@
               </center>
             </strong>
           </h4>
+          <p>
+        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
+        100円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
+        50円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
+        10円
+        </button>
+      </p>
         </center>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
-    <H4>Youtuberランキング@T2pay</H4></br>
+    <H3>Youtuberランキング@T2pay</H3></br>
+    <table class="table">
+      <thead>
+        <tr class = "danger">
+          <th>順位</th>
+          <th>Youtuber</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rank.length.times do |i| %>
+        <tr>
+          <th><%= i+1 %>
+              <td>
+              <%= link_to @rank[i][0], @tests.find(@rank[i][2].to_i).ytube_page %>
+              </td>
+              <td>
+              <%= @rank[i][1] %>円
+              </td>
+          </th>
+        </tr>
+        <% end %>
+      </tbody>
     <H3>
-    <% @rank.length.times do |i| %>
-     <%= @rank[i][0] %>：
-     <%= @rank[i][1] %>円</br>
-     <% end %>
+    
+     
     </H3></br>
   </div>
 </div>
