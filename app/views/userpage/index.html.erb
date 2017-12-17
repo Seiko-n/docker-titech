@@ -15,22 +15,13 @@
 </form>
 <div class="row">
   <div class="col-sm-2">
-<<<<<<< HEAD
-    <p>
-      [ユーザーネーム] <%= @tests.find(1).name %><br />
-      [所持金] <%= @tests.find(1).syojikin %>円<br />
-      [支援先]
-      <%= @tests.find(1).syojikin %>円<br />
-      [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
-    </p>
-  	<H1>  <%= @sum*@passtime %> Value</H1></div>
-=======
+
     <H4>
       ユーザー: <%= @tests.find(1).name %><br />
       所持金: <%= @tests.find(1).syojikin %>円<br />
       支援先：<%= @tests.find(@tokens.find(1).creator_id).name %><br />
   	<H4>  <%= @sum*@passtime %> Value</H4></div>
->>>>>>> e610f9adf6edce2a515fb80cf3a4590371542e9b
+
   <div class="col-sm-7">
   	あなたへのおすすめ
     <center>
