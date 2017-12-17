@@ -7,7 +7,8 @@ class UserpageController < ApplicationController
     @tokens = Token.all
     @sum = 0
     @tokens.length.times do |i|
-    @sum =@sum + Token.find(i+1).aglt
+      @sum =@sum + Token.find(i+1).aglt
+    end
     @passtime = (Time.now - @tokens.find(1).created_at).to_i
 
 
@@ -17,7 +18,7 @@ class UserpageController < ApplicationController
       ranking[i][1] = @tests.find(i+1).prem_price
     end
     @rank = ranking.sort { |a, b| b[1] <=> a[1] }
-    end
+
 
 
   end

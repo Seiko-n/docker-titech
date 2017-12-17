@@ -75,7 +75,12 @@
   </div>
   <div class="col-sm-3">
     <H4>Youtuberランキング@T2pay</H4></br>
-    <H3><%= @rank %></H3></br>
+    <H3>
+    <%@rank.length.times do |i|%>
+      <%=@rank[i][0]%>
+      <%=@rank[i][1]%> 円</br>
+    <%end%>
+　　</H3>
   </div>
 </div>
 </BODY>
