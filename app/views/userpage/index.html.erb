@@ -22,6 +22,11 @@
       支援先:<br /><%= @tests.find(@tokens.find(1).creator_id).name %><br /><br />
   	  あなたのValue<br /><strong><%= @sum*@passtime %></strong>
     </H3>
+    <div class="progress">
+ <div class="progress-bar" role="progressbar" aria-valuenow="<%@tokens.find(@tests.find(1).id).aglt%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=(@tokens.find(@tests.find(2).id).aglt*100/@tests.find(@tokens.find(4).creator_id).prem_price)%>%;">
+    <%=(@tokens.find(@tests.find(2).id).aglt*100/@tests.find(@tokens.find(4).creator_id).prem_price)%>%
+ </div>
+</div>
   </div>
   <div class="col-sm-7">
     <h3>
@@ -51,9 +56,9 @@
         <%= form_for Token.new, url:tokens_path do |t| %>
             <%= t.hidden_field :user_id, value: current_user.id %>
             <%=puts(current_user.id)%>
-            <%= t.hidden_field :creator_id, value: @movies.first.creator_id %>
+            <%= t.hidden_field :creator_id, value: 5 %>
             <%= t.hidden_field :aglt, value: 100 %>
-            <%=puts(@movies.first.creator_id)%>
+            <%=puts(@movies.find(20).creator_id)%>
             <%= t.submit "100円", class:"btn btn-danger"%>
         <% end %>
 
@@ -74,11 +79,11 @@
             <%=puts(@movies.first.creator_id)%>
             <%= t.submit "10円", class:"btn btn-info"%>
         <% end %>
-
+      </p>
     <div class="row">
       <div class="col-sm-6">
       	<center>
-          <% num = rand(1..16) %>
+          <% num = rand(1..20) %>
           <% iframe = content_tag(
           :iframe,
           '', # empty body
@@ -98,7 +103,7 @@
           </h4>
       </div>
       <div class="col-sm-6">
-      	  <% num = rand(1..16) %>
+      	  <% num = rand(1..20) %>
       	  <% iframe = content_tag(
           :iframe,
           '', # empty body
@@ -121,16 +126,34 @@
         </center>
       </div>
     </div>
-  </div>
+
   <div class="col-sm-3">
-    <H4>Youtuberランキング@T2pay</H4></br>
-    <H3>
-    <% @rank.length.times do |i| %>
-     <%= @rank[i][0] %>：
-     <%= @rank[i][1] %>円</br>
-     <% end %>
-    </H3></br>
+      <H3>Youtuberランキング@T2pay</H3>
+      <table class="table">
+        <thead>
+          <tr class = "danger">
+            <th>順位</th>
+            <th>Youtuber</th>
+            <th>金額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rank.length.times do |i| %>
+          <tr>
+            <th><%= i+1 %>
+                <td>
+                <%= link_to @rank[i][0], @tests.find(@rank[i][2].to_i).ytube_page %>
+                </td>
+                <td>
+                <%= @rank[i][1] %>円
+                </td>
+            </th>
+          </tr>
+          <% end %>
+        </tbody>
+    </div>
   </div>
+
 </div>
 </BODY>
 </HTML>
