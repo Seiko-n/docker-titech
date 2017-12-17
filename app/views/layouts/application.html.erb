@@ -21,27 +21,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="/">t2pay</a>
+        <a class="navbar-brand" href="/">T2Pay</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
             <ul>
               <li>
-                <strong><%= link_to current_user.name, userpage_path %></strong>
+                <h3>
+                <strong>
+                  <%= link_to current_user.name, userpage_path %>
+                </strong>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
                 <%= link_to '銭を投げる', tokens_path%>
                 <%= link_to '動画を追加する', movies_path%>
-
-
+              </h3>
               </li>
             </ul>
           <% else %>
           <ul>
               <li>
-              <%= link_to '新規登録', new_user_registration_path %>
-              <%= link_to 'ログイン', new_user_session_path %>
+                 <h3>
+                   <%= link_to '新規登録', new_user_registration_path %>
+                   <%= link_to 'ログイン', new_user_session_path %>
+                 </h3>
             </li>
           </ul>
             <% end %>
