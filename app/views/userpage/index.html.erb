@@ -15,13 +15,18 @@
 </form>
 <div class="row">
   <div class="col-sm-2">
-    <H4>
-      ユーザー: <%= @tests.find(1).name %><br />
-      所持金: <%= @tests.find(1).syojikin %>円<br />
-      支援先：<%= @tests.find(@tokens.find(1).creator_id).name %><br />
-  	<H4>  <%= @sum*@passtime %> Value</H4></div>
+    <H3>
+      <%= @tests.find(1).name %>さん<br />
+      <br />
+      所持金:<br /><%= @tests.find(1).syojikin %>円<br /><br />
+      支援先:<br /><%= @tests.find(@tokens.find(1).creator_id).name %><br /><br />
+  	  あなたのValue<br /><strong><%= @sum*@passtime %></strong>
+    </H3>
+  </div>
   <div class="col-sm-7">
-  	あなたへのおすすめ
+    <h3>
+    あなたへのおすすめ
+    </h3>
     <center>
     <% num = rand(1..16) %>
     <% iframe = content_tag(
@@ -35,7 +40,26 @@
       allowfullscreen: true
       ) %>
       <%= content_tag(:div, iframe, class: 'youtube-container') %>
+      <h3>
+        <%= @movies.find(num).title %></br>
+        <strong>
+          <%= @tests.find(@movies.find(num).creator_id).name %>
+        </strong>
+      </h3>
+      <p>
+        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
+        100円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
+        50円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
+        10円
+        </button>
+      </p>
       </center>
+      </br>
+      </br>
     <div class="row">
       <div class="col-sm-6">
       	<center>
@@ -51,8 +75,12 @@
           allowfullscreen: true
           ) %>
           <%= content_tag(:div, iframe, class: 'youtube-container') %>
+          <h4>
           <%= @movies.find(num).title %> </br>
-          <%= @tests.find(@movies.find(num).creator_id).name %>
+          <strong>
+            <%= @tests.find(@movies.find(num).creator_id).name %>
+          </strong>
+          </h4>
       </div>
       <div class="col-sm-6">
       	  <% num = rand(1..16) %>
@@ -67,15 +95,21 @@
           allowfullscreen: true
           ) %>
           <%= content_tag(:div, iframe, class: 'youtube-container') %>
-          <%= @movies.find(num).title %> </br>
-          <%= @tests.find(@movies.find(num).creator_id).name %>
-          </center>
+          <h4>
+            <%= @movies.find(num).title %> </br>
+            <strong>
+              <center>
+                <%= @tests.find(@movies.find(num).creator_id).name %>
+              </center>
+            </strong>
+          </h4>
+        </center>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
-    <H4>Youtuberランキング@T2pay</H4></br>
-    <H3><%= @rank %></H3></br>
+    <H3>Youtuberランキング@T2pay</H3></br>
+    <H3><%= @rank_n %> <%= @rank_t %> </H3></br>
   </div>
 </div>
 </BODY>
