@@ -47,19 +47,34 @@
         </strong>
       </h3>
       <p>
-        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
-        100円
-        </button>
-        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
-        50円
-        </button>
-        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
-        10円
-        </button>
-      </p>
-      </center>
-      </br>
-      </br>
+
+        <%= form_for Token.new, url:tokens_path do |t| %>
+            <%= t.hidden_field :user_id, value: current_user.id %>
+            <%=puts(current_user.id)%>
+            <%= t.hidden_field :creator_id, value: @movies.first.creator_id %>
+            <%= t.hidden_field :aglt, value: 100 %>
+            <%=puts(@movies.first.creator_id)%>
+            <%= t.submit "100円", class:"btn btn-danger"%>
+        <% end %>
+
+        <%= form_for Token.new, url:tokens_path do |t| %>
+            <%= t.hidden_field :user_id, value: current_user.id %>
+            <%=puts(current_user.id)%>
+            <%= t.hidden_field :creator_id, value: @movies.first.creator_id %>
+            <%= t.hidden_field :aglt, value: 50 %>
+            <%=puts(@movies.first.creator_id)%>
+            <%= t.submit "50円", class:"btn btn-warning"%>
+        <% end %>
+
+        <%= form_for Token.new, url:tokens_path do |t| %>
+            <%= t.hidden_field :user_id, value: current_user.id %>
+            <%=puts(current_user.id)%>
+            <%= t.hidden_field :creator_id, value: @movies.first.creator_id %>
+            <%= t.hidden_field :aglt, value: 10 %>
+            <%=puts(@movies.first.creator_id)%>
+            <%= t.submit "10円", class:"btn btn-info"%>
+        <% end %>
+
     <div class="row">
       <div class="col-sm-6">
       	<center>
