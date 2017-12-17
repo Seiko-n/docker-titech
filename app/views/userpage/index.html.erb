@@ -20,6 +20,12 @@
       ユーザー: <%= @tests.find(1).name %><br />
       所持金: <%= @tests.find(1).syojikin %>円<br />
       支援先：<%= @tests.find(@tokens.find(1).creator_id).name %><br />
+
+      <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="@tokens.find(@tests.find(1).id).aglt" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@tokens.find(@tests.find(1).id).aglt/@tests.find(@tokens.find(1).creator_id).prem_price)*100%> %;">
+    <%= (@tokens.find(@tests.find(1).id).aglt/@tests.find(@tokens.find(1).creator_id).prem_price)*100%>%
+  </div>
+</div>
   	<H4>  <%= @sum*@passtime %> Value</H4></div>
 
   <div class="col-sm-7">

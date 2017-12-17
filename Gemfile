@@ -10,6 +10,8 @@ gem 'omniauth-twitter'
 gem 'chartkick'
 gem 'jquery-rails'
 
+#progress bar
+gem 'each_with_anim'
 #ethereum
 gem 'ethereum.rb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

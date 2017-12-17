@@ -56,6 +56,7 @@ GEM
       responders
       warden (~> 1.2.3)
     digest-sha3 (1.1.0)
+    each_with_anim (0.1.4)
     erubi (1.7.0)
     ethereum.rb (2.1.8)
       activesupport (~> 5.0)
@@ -179,6 +180,7 @@ DEPENDENCIES
   byebug
   chartkick
   devise
+  each_with_anim
   ethereum.rb
   jbuilder (~> 2.5)
   jquery-rails
