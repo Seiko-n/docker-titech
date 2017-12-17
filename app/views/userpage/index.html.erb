@@ -16,17 +16,17 @@
 <div class="row">
   <div class="col-sm-2">
     <p>
-      movie_id: <%= num = rand(1..17) %>
       [ユーザーネーム] <%= @tests.find(1).name %><br />
-      [タイプ] <%= @tests.find(1).user_type %><br />
-      [メールアドレス] <%= @tests.find(1).email %><br />
-      [おすすめ動画] <A Href="<%= @movies.find(num).url %>"><%= @movies.find(num).title %></A><br />
+      [所持金] <%= @tests.find(1).syojikin %>円<br />
+      [支援先]
+      <%= @tests.find(1).syojikin %>円<br />
       [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
     </p>
   	<H1>  <%= @sum*@passtime %> Value</H1></div>
   <div class="col-sm-7">
   	あなたへのおすすめ
     <center>
+    <% num = rand(1..16) %>
     <% iframe = content_tag(
       :iframe,
       '', # empty body
@@ -42,7 +42,7 @@
     <div class="row">
       <div class="col-sm-6">
       	<center>
-          <% num = rand(1..17) %>
+          <% num = rand(1..16) %>
           <% iframe = content_tag(
           :iframe,
           '', # empty body
@@ -58,7 +58,7 @@
           <%= @tests.find(@movies.find(num).creator_id).name %>
       </div>
       <div class="col-sm-6">
-      	  <% num = rand(1..17) %>
+      	  <% num = rand(1..16) %>
       	  <% iframe = content_tag(
           :iframe,
           '', # empty body
