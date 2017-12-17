@@ -7,7 +7,7 @@ class UserpageController < ApplicationController
     @tokens = Token.all
     @sum = 0
 
-    5.times do |i|
+    1.times do |i|
       @sum =@sum + Token.find(i+1).aglt
     end
 

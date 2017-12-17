@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
-<meta http-equiv="refresh" content="10" >
+<meta http-equiv="refresh" content="3" >
 <HTML lang="ja">
 <HEAD>
 <TITLE>CSSのテスト</TITLE>
@@ -13,13 +13,14 @@
 <H4>
 保有トークン割合
 </H4>
-
-<%= pie_chart @pie_chart %>
+<p>
+  movie_id: <%= num = rand(1..17) %>
+</p>
 <p>
 [ユーザーネーム] <%= @tests.find(1).name %><br />
 [タイプ] <%= @tests.find(1).user_type %><br />
 [メールアドレス] <%= @tests.find(1).email %><br />
-[おすすめ映画] <A Href="<%= @movies.find(1).url %>"><%= @movies.find(1).title %></A><br />
+[おすすめ映画] <A Href="<%= @movies.find(num).url %>"><%= @movies.find(num).title %></A><br />
 [ユーザー:<%= @tests.find(1).name %>の合計トークン数]　<%= @sum %> AGLT<br />
 [トークン価値] <%= @sum %> AGLT * <%= @passtime %> sec =  <%= @sum*@passtime %> Value<br />
 </p>
@@ -29,8 +30,7 @@
     '', # empty body
     width: 460,
     height: 215,
-    src: "https://www.youtube.com/embed/rfEJnGp4984",
-    # src: "https://www.youtube.com/embed/#{@movie_id}",
+    src: "https://www.youtube.com/embed/#{@movies.find(num).embeded_id}",
     frameborder: 0,
     allowfullscreen: true
 ) %>

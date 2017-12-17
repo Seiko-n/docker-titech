@@ -22,8 +22,7 @@
 
 
 
-#Tokenのシードのテンプレ
-#Token.create!(:user => User.find(1), :creator_id => 2, :aglt => 100, :movie_id => 2 )
+
 
 User.create!(:name => "matuken", :email => "matuura@knetaro.com", :password => "kentaro",  :genre1 => "パルクール",  :genre2 => "アウトドア", :genre3 => "英語", :kakutoku => 0, :prem_price => 0 )
 
@@ -75,3 +74,6 @@ Movie.create!(:title => "パルクール練習", :url => 'https://www.youtube.co
 
 #17-
 Movie.create!(:title => "メジャーリーガー岩隈久志選手VSトクサン！神レベルの制球力に迫る！", :url =>"https://www.youtube.com/watch?v=Roj2wVJ-ua0",:embeded_id => 'Roj2wVJ-ua0', :creator_id => 6)
+
+#Tokenのシードのテンプレ
+Token.create!(:user => User.find(1), :creator_id => 2, :aglt => 100, :movie_id => 2 )
