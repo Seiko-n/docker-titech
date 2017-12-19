@@ -6,23 +6,31 @@ class UserpageController < ApplicationController
     @movies = Movie.all
     @tokens = Token.all
     @sum = 0
+
     @tokens.length.times do |i|
       @sum =@sum + Token.find(i+1).aglt
     end
+
     @passtime = (Time.now - @tokens.find(1).created_at).to_i
 
 
-    ranking = Array.new(@tests.length).map{Array.new(3,"name")}
-
+    ranking = Array.new(@tests.length).map{Array.new(2,"name")}
+    
     ranking.length.times do |i|
       ranking[i][0] = @tests.find(i+1).name
-<<<<<<< HEAD
-      ranking[i][1] = @tests.find(i+1).kakutoku
-=======
       ranking[i][1] = @tests.find(i+1).prem_price
->>>>>>> d70c7e729531a76c6da0179c3f1c4730235a743a
-      ranking[i][2] = @tests.find(i+1).id
     end
+
+    rank_name = Array.new(@tests.length).map{Array.new(1,"name")}
+    rank_top = Array.new(@tests.length).map{Array.new(1,"name")}
+
     @rank = ranking.sort { |a, b| b[1] <=> a[1] }
+
+    ranking.length.times do |i|
+      rank_name[i] = @rank[i][0]
+      rank_top[i] = @rank[i][1]
+    end
+    @rank_n = rank_name
+    @rank_t = rank_top
   end
 end

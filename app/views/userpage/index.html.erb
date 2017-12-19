@@ -15,6 +15,7 @@
 </form>
 <div class="row">
   <div class="col-sm-2">
+<<<<<<< HEAD
     <H3>
       <%= @tests.find(1).name %>さん<br />
       <br />
@@ -28,6 +29,15 @@
  </div>
 </div>
   </div>
+=======
+
+    <H4>
+      ユーザー: <%= @tests.find(1).name %><br />
+      所持金: <%= @tests.find(1).syojikin %>円<br />
+      支援先：<%= @tests.find(@tokens.find(1).creator_id).name %><br />
+  	<H4>  <%= @sum*@passtime %> Value</H4></div>
+
+>>>>>>> d70c7e729531a76c6da0179c3f1c4730235a743a
   <div class="col-sm-7">
     <h3>
     あなたへのおすすめ
@@ -101,6 +111,17 @@
             <%= @tests.find(@movies.find(num).creator_id).name %>
           </strong>
           </h4>
+          <p>
+        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
+        100円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
+        50円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
+        10円
+        </button>
+      </p>
       </div>
       <div class="col-sm-6">
       	  <% num = rand(1..20) %>
@@ -123,11 +144,23 @@
               </center>
             </strong>
           </h4>
+          <p>
+        <button type="button" id="sampleButtonStateful" class="btn btn-danger" data-loading-text="実行中" autocomplete="off">
+        100円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-warning" data-loading-text="実行中" autocomplete="off">
+        50円
+        </button>
+        <button type="button" id="sampleButtonStateful" class="btn btn-info" data-loading-text="実行中" autocomplete="off">
+        10円
+        </button>
+      </p>
         </center>
       </div>
     </div>
 
   <div class="col-sm-3">
+<<<<<<< HEAD
       <H3>Youtuberランキング@T2pay</H3>
       <table class="table">
         <thead>
@@ -152,6 +185,35 @@
           <% end %>
         </tbody>
     </div>
+=======
+    <H3>Youtuberランキング@T2pay</H3></br>
+    <table class="table">
+      <thead>
+        <tr class = "danger">
+          <th>順位</th>
+          <th>Youtuber</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rank.length.times do |i| %>
+        <tr>
+          <th><%= i+1 %>
+              <td>
+              <%= link_to @rank[i][0], @tests.find(@rank[i][2].to_i).ytube_page %>
+              </td>
+              <td>
+              <%= @rank[i][1] %>円
+              </td>
+          </th>
+        </tr>
+        <% end %>
+      </tbody>
+    <H3>
+    
+     
+    </H3></br>
+>>>>>>> d70c7e729531a76c6da0179c3f1c4730235a743a
   </div>
 
 </div>
